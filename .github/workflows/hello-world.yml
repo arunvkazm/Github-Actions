@@ -1,34 +1,14 @@
-name: Flutter Build
+name: Hello World
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: [push]
 
 jobs:
-  build:
+  say-hello:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.29.2'
-
-      - name: Install dependencies
-        run: flutter pub get
-
-      - name: Run Flutter Analyzer
-        run: flutter analyze
-
-      - name: Run Tests
-        run: flutter test
-
-      - name: Build APK
-        run: flutter build apk --release
+      - name: Print Hello World
+        run: echo "Hello, World! GitHub Actions is awesome!"
